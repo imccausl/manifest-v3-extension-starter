@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Manifest V3 Extension Playground",
+  "version": "1.0",
+  "description": "A playground for the Manifest V3 API",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
