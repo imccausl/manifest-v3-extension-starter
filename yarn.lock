@@ -593,16 +593,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.0.257":
-  version: 0.0.257
-  resolution: "@types/chrome@npm:0.0.257"
-  dependencies:
-    "@types/filesystem": "npm:*"
-    "@types/har-format": "npm:*"
-  checksum: 02df79891c98bba44d30ba124e7de758f6f752cbd40d773971ce61b869aa64324c6a8ba8aa4cb774bff43ac6adf717e2c454d5041c3d72f440610f7673fd5458
-  languageName: node
-  linkType: hard
-
 "@types/emscripten@npm:^1.39.6":
   version: 1.39.10
   resolution: "@types/emscripten@npm:1.39.10"
@@ -624,29 +614,6 @@ __metadata:
   version: 1.0.5
   resolution: "@types/estree@npm:1.0.5"
   checksum: b3b0e334288ddb407c7b3357ca67dbee75ee22db242ca7c56fe27db4e1a31989cb8af48a84dd401deb787fe10cc6b2ab1ee82dc4783be87ededbe3d53c79c70d
-  languageName: node
-  linkType: hard
-
-"@types/filesystem@npm:*":
-  version: 0.0.35
-  resolution: "@types/filesystem@npm:0.0.35"
-  dependencies:
-    "@types/filewriter": "npm:*"
-  checksum: 16a380e9774c5a9e1358f3ee28a3d85a93488443f235d160da3969aae7858dc6c6148cb3ff6b7e814f1c43f17940da0941f004373566d4fe7f75d9fda5efe246
-  languageName: node
-  linkType: hard
-
-"@types/filewriter@npm:*":
-  version: 0.0.32
-  resolution: "@types/filewriter@npm:0.0.32"
-  checksum: 4feea7890d7945059f8eec0f89b1a4fe4f0522156c9345d9123c3498c6dba4584a17bd886daa4392a2e19bd9d16ee82aff9a0e1b837af507b612bcc6bd4c4305
-  languageName: node
-  linkType: hard
-
-"@types/har-format@npm:*":
-  version: 1.2.15
-  resolution: "@types/har-format@npm:1.2.15"
-  checksum: 43ede55c3947e5cf59561f165930dc2eb3ae983fd162980cdc7274be1e7f528a6f77e65fee9a02a20d91b09bde10bed832b0470724f5c744ef6669015d00564e
   languageName: node
   linkType: hard
 
@@ -736,6 +703,13 @@ __metadata:
   version: 1.0.3
   resolution: "@types/treeify@npm:1.0.3"
   checksum: 758902638ff83a790c13359729d77aeb80aae50f7039670037e3a0ba2bcc7b09dd49173ab21a96946d83af1682fcd70e448e49151ecd46e190f8925077142d4a
+  languageName: node
+  linkType: hard
+
+"@types/webextension-polyfill@npm:^0":
+  version: 0.10.7
+  resolution: "@types/webextension-polyfill@npm:0.10.7"
+  checksum: 78f9153398172b66db74e02202146e078b9c8fe30a283f52e7ab58021fdb4d18be74555142ec83b878f9d05d98a0296ffbef8287aedd411d9503025fe8ddba36
   languageName: node
   linkType: hard
 
@@ -2881,11 +2855,11 @@ __metadata:
   resolution: "manifest-v3-playground@workspace:."
   dependencies:
     "@tanstack/react-query": "npm:^5.17.15"
-    "@types/chrome": "npm:^0.0.257"
     "@types/eslint": "npm:^8"
     "@types/node": "npm:^20.11.4"
     "@types/react": "npm:^18.2.48"
     "@types/react-dom": "npm:^18.2.18"
+    "@types/webextension-polyfill": "npm:^0"
     "@typescript-eslint/eslint-plugin": "npm:^6.19.0"
     "@typescript-eslint/parser": "npm:^6.19.0"
     "@vitejs/plugin-react-swc": "npm:^3.5.0"
@@ -2899,6 +2873,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     typescript: "npm:^5.3.3"
     vite: "npm:^5.0.11"
+    webextension-polyfill: "npm:^0.10.0"
   languageName: unknown
   linkType: soft
 
@@ -4159,6 +4134,13 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 74a3ddc6d43cf19cb6f827a53d77c481a07517a72b7d82a178df082012ad81ab5231a287a6dcc5471c0b2a5c8dd7e6ea8e1d62d268803057d0315729f09c5e33
+  languageName: node
+  linkType: hard
+
+"webextension-polyfill@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "webextension-polyfill@npm:0.10.0"
+  checksum: 6a45278f1fed8fbd5355f9b19a7b0b3fadc91fa3a6eef69125a1706bb3efa2181235eefbfb3f538443bb396cfcb97512361551888ce8465c08914431cb2d5b6d
   languageName: node
   linkType: hard
 
