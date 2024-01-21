@@ -4,7 +4,8 @@
   "version": "1.0",
   "description": "A playground for the Manifest V3 API",
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "action": {
     "default_popup": "popup.html"

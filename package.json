@@ -7,12 +7,13 @@
     "dev": "yarn build --watch"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.17.15",
+    "@tanstack/react-query": "^5.17.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "webextension-polyfill": "^0.10.0"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.17.20",
     "@types/eslint": "^8",
     "@types/node": "^20.11.4",
     "@types/react": "^18.2.48",
