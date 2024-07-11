@@ -10,6 +10,18 @@
   "action": {
     "default_popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "type": "module",
+      "run_at": "document_start"
+    }
+  ],
   "permissions": [
     "storage",
     "scripting",
