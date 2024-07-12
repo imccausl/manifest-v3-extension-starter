@@ -8,9 +8,9 @@
     "install-sdks": "yarn sdks vscode"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.51.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@tanstack/react-query": "^5.17.15",
     "webextension-polyfill": "^0.12.0"
   },
   "devDependencies": {
@@ -20,10 +20,10 @@
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.9.0",
-    "@typescript-eslint/parser": "^7.9.0",
     "@types/webextension-polyfill": "^0.10.7",
-    "@vitejs/plugin-react-swc": "^3.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
     "@yarnpkg/sdks": "^3.1.3",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -31,9 +31,12 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.2.5",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.11"
+    "eslint-plugin-react": "^7.34.3",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3"
+  },
+  "resolutions": {
+    "synckit@npm:^0.8.6": "patch:synckit@npm:0.8.8#.yarn/patches/synckit-npm-0.8.8-f5ee4a6dac.patch"
   }
 }
