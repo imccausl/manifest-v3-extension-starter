@@ -15,7 +15,8 @@
   "include": [
     "app",
     "vite.config.ts",
-    "infrastructure"
+    "infrastructure",
+    "public/content-entry.js"
   ],
   "ts-node": {
     "compilerOptions": {

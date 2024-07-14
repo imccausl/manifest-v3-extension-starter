@@ -16,10 +16,9 @@
         "<all_urls>"
       ],
       "js": [
-        "content.js"
+        "content-entry.js"
       ],
-      "type": "module",
-      "run_at": "document_start"
+      "type": "module"
     }
   ],
   "permissions": [
@@ -27,7 +26,15 @@
     "scripting",
     "activeTab"
   ],
-  "host_permissions": [
-    "<all_urls>"
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "content.js",
+        "assets/*"
+      ]
+    }
   ]
 }

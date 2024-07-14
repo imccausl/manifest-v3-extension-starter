@@ -1,26 +1,59 @@
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import browser from 'webextension-polyfill'
 
+const StorageType = {
+    local: 'local',
+    session: 'session',
+    sync: 'sync',
+} as const
+
+type StorageType = (typeof StorageType)[keyof typeof StorageType]
+
+function createStorageSetter<K extends string>(
+    storageType: StorageType,
+    key: K,
+) {
+    async function setStorage<T>(newValue: T) {
+        return browser.storage[storageType].set({ [key]: newValue })
+    }
+
+    return setStorage
+}
+
+const storageQueryKey = <K>(storageType: StorageType, key: K) => [
+    'storage',
+    storageType,
+    key,
+]
+
 const createUseStorageHook =
-    (storageType: 'local' | 'session' | 'sync') =>
-    <T>(key: string) => {
+    (storageType: StorageType) =>
+    <T, K extends string>(key: K) => {
+        const queryClient = useQueryClient()
+        const queryKey = storageQueryKey(storageType, key)
         const storageQuery = useQuery<T>({
-            queryKey: ['storage', storageType, key],
+            queryKey,
             queryFn: async () => {
-                const data = await browser.storage[storageType].get(key)
+                const data: Record<K, T> =
+                    await browser.storage[storageType].get(key)
                 return data[key]
             },
         })
 
-        const setStorage = useMutation<T, V>(
-            async (newValue) => {
-                await browser.storage[storageType].set({ [key]: newValue })
-                return newValue
+        const setStorage = createStorageSetter(storageType, key)
+        const { mutate } = useMutation({
+            mutationFn: setStorage,
+
+            onSuccess: () => {
+                queryClient.invalidateQueries({ queryKey })
             },
-            {
-                onSuccess: (newValue) => {
-                    storageQuery.setData(newValue)
-                },
-            },
-        )
+        })
+
+        return [storageQuery.data, mutate] as const
     }
+
+export default {
+    useLocalStorage: createUseStorageHook(StorageType.local),
+    useSessionStorage: createUseStorageHook(StorageType.session),
+    useSyncStorage: createUseStorageHook(StorageType.sync),
+}

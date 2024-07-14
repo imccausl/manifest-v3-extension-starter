@@ -1,9 +1,9 @@
 import browser from 'webextension-polyfill'
 
 browser.runtime.onInstalled.addListener(() => {
-  console.log('Extension installed')
+    console.log('Extension installed')
 })
 
 browser.runtime.onMessage.addListener((message) => {
-  console.log('Message received', message)
+    console.log('Message received', message)
 })
