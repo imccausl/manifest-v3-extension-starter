@@ -19,10 +19,7 @@ export async function synchronizeQueryClient({
 
     const channel = new ExtensionBroadcastChannel(broadcastChannel)
     const queryCache = queryClient.getQueryCache()
-    channel.postMessage({
-        type: 'init',
-        payload: 'hello world',
-    })
+
     queryClient.getQueryCache().subscribe(async (queryEvent) => {
         if (transaction) return
 

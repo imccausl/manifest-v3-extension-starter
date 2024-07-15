@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useCurrentTab } from '../../shared/hooks'
+import { useCurrentTab } from '../../shared/clients'
 
 export const Popup: React.FC = () => {
     const { data } = useCurrentTab()

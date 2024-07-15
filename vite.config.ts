@@ -8,6 +8,7 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         sourcemap: true,
+        target: 'chrome120',
         rollupOptions: {
             output: {
                 entryFileNames: '[name].js',

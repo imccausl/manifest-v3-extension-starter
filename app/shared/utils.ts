@@ -73,12 +73,12 @@ export class ExtensionBroadcastChannel {
         this.#registerMessageListener()
     }
 
-    #registerMessageListener() {
+    #registerMessageListener(onConnect = false) {
         if (!this.#handler) {
             throw new Error('Handler is missing')
         }
 
-        if (!this.#port) {
+        if (!this.#port && !onConnect) {
             console.log('no connection, establishing connection')
             this.#connect().then(() => {
                 console.log('connected, registering message listener')
@@ -90,7 +90,7 @@ export class ExtensionBroadcastChannel {
             return
         }
 
-        this.#port.onMessage.addListener(this.#handler)
+        this.#port!.onMessage.addListener(this.#handler)
     }
 
     #removeMessageListener() {
@@ -104,15 +104,10 @@ export class ExtensionBroadcastChannel {
         const onConnectHandler = (port: browser.Runtime.Port) => {
             console.log('onConnectHandler', port)
             this.#port = port
-            this.#registerMessageListener()
+            this.#registerMessageListener(true)
         }
 
         browser.runtime.onConnect.addListener(onConnectHandler)
-
-        return () => {
-            browser.runtime.onConnect.removeListener(onConnectHandler)
-            this.#removeMessageListener()
-        }
     }
 
     postMessage<T extends Record<string, unknown>>(message: T) {
