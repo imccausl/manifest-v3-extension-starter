@@ -14,7 +14,6 @@ document.body.prepend(rootElement)
 
 const root = createRoot(rootElement)
 synchronizeQueryClient({ queryClient })
-console.log('hello world')
 root.render(
     <QueryClientProvider client={queryClient}>
         <ContentEntry />

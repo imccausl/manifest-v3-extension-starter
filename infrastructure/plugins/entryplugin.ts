@@ -6,7 +6,7 @@ import { type Plugin } from 'vite'
 
 const allowedInputFolderNames = [
     'background',
-    'content',
+    'content-script',
     'popup',
     'service-worker',
 ]

@@ -16,7 +16,7 @@
         "<all_urls>"
       ],
       "js": [
-        "content-entry.js"
+        "content.js"
       ],
       "type": "module"
     }
@@ -32,7 +32,7 @@
         "<all_urls>"
       ],
       "resources": [
-        "content.js",
+        "content-script.js",
         "assets/*"
       ]
     }
