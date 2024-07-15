@@ -4,19 +4,18 @@ import { createRoot } from 'react-dom/client'
 
 import { synchronizeQueryClient } from '../shared/synchronizeQueryClient'
 
-import { Popup } from './Popup'
+import { ContentEntry } from './ContentEntry'
 
-export const queryClient = new QueryClient()
-synchronizeQueryClient({ queryClient })
+const queryClient = new QueryClient()
 
 const rootElement = document.createElement('div')
-rootElement.id = 'popup-root'
-document.body.appendChild(rootElement)
+rootElement.id = 'content-root'
+document.body.prepend(rootElement)
 
 const root = createRoot(rootElement)
-
+synchronizeQueryClient({ queryClient })
 root.render(
     <QueryClientProvider client={queryClient}>
-        <Popup />
+        <ContentEntry />
     </QueryClientProvider>,
 )

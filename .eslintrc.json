@@ -1,9 +1,6 @@
 {
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "@imccausl/eslint-config"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -13,25 +10,6 @@
       "jsx": true
     },
     "project": "./tsconfig.json"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-  "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "semi": false,
-        "singleQuote": true
-      }
-    ],
-    "semi": "off",
-    "quotes": [
-      "error",
-      "single"
-    ]
   },
   "ignorePatterns": [
     "dist",
